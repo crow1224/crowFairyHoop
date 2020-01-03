@@ -10,13 +10,13 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
 
     #region //インスペクターに表示される変数//
     [SerializeField]
-    private Text Score_Text;//スコア用テキスト
+    private TextMeshProUGUI Score_Text;//スコア用テキスト
 
     [SerializeField]
-    private Text Nine_Text;//スコア用テキスト
+    private TextMeshProUGUI Nine_Text;//スコア用テキスト
 
     [SerializeField]
-    private Text GameOver_Text;//ゲームオーバーを出すためのテキスト
+    private TextMeshProUGUI GameOver_Text;//ゲームオーバーを出すためのテキスト
 
     [SerializeField]
     private GameObject Nice_Image;//Nineの画像
@@ -87,9 +87,9 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
     private void Start()
     {
         //テキストを取得
-        Score_Text = Score_Text.GetComponent<Text>();
-        Nine_Text = Nine_Text.GetComponent<Text>();
-        GameOver_Text = GameOver_Text.GetComponent<Text>();
+        Score_Text = Score_Text.GetComponent<TextMeshProUGUI>();
+        Nine_Text = Nine_Text.GetComponent<TextMeshProUGUI>();
+        GameOver_Text = GameOver_Text.GetComponent<TextMeshProUGUI>();
 
         //オーディオソースを取得
         Ring_Sound = GetComponent<AudioSource>();
