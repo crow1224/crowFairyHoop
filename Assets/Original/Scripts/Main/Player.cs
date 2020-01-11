@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class Player : MonoBehaviour
@@ -28,31 +26,31 @@ public class Player : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
         //ポーズを開始
         DunkManager.Instance.Start_Pose();
- 
+
     }
 
     void Update()
     {
         //プレイ続行可能な場合
-        if(DunkManager.Instance.F_Play == true)
+        if (DunkManager.Instance.F_Play == true)
         {
 
 
-                //左マウスクリックした場合
-                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+            //左マウスクリックした場合
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+            {
+                //フラグが許可されている場合
+                if (DunkManager.Instance.F_Pose == true)
                 {
-                   //フラグが許可されている場合
-                   if(DunkManager.Instance.F_Pose == true)
-                    {
-                    　　//ポーズを解除
-                        DunkManager.Instance.RePose();
-                        
-                        
-                    }
-                    //ジャンプを許可する
-                    isJump = true;
+                    //ポーズを解除
+                    DunkManager.Instance.RePose();
+
+
                 }
-            
+                //ジャンプを許可する
+                isJump = true;
+            }
+
 
         }
 
@@ -87,11 +85,11 @@ public class Player : MonoBehaviour
         }
 
         //衝突したオブジェクトのタグがBadだった場合
-        if(collision.gameObject.tag == "Bad")
+        if (collision.gameObject.tag == "Bad")
         {
             //Bad関数を呼び出す
             DunkManager.Instance.Bad();
-            
+
 
         }
     }
@@ -101,7 +99,7 @@ public class Player : MonoBehaviour
         //衝突したオブジェクトのタグがScoreの場合
         if (collision.gameObject.tag == "Clear")
         {
-            
+
             //Flag_Under関数を呼び出す
             DunkManager.Instance.Flag_Under();
 
@@ -112,8 +110,9 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Score")
         {
             //Point関数を呼び出す
-            DunkManager.Instance.Point();
-            MoveSpeed =  DunkManager.Instance.Score * AddSpeed + StartSpeed;
+            GameObject ringObject = collision.transform.parent.gameObject;
+            DunkManager.Instance.Point(ringObject);
+            MoveSpeed = DunkManager.Instance.Score * AddSpeed + StartSpeed;
 
         }
     }

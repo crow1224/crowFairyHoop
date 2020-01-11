@@ -41,6 +41,10 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
 
     [SerializeField]
     private AudioSource BGM;
+
+    [SerializeField]
+    private ParticleSystem[] Ring_Particle = new ParticleSystem[4];// パーティクルを格納する
+
     #endregion
 
     #region //pruvate変数//
@@ -143,7 +147,7 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
 
     }
 
-    public void Point()//スコア判定
+    public void Point(GameObject ringObject)//スコア判定
     {
         if (!F_Under)
         {
@@ -171,6 +175,8 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
                 CameraShake.Instance.Shake();
                 //SEPlay
                 Ring_Sound.PlayOneShot(audioClip[2]);
+                //リングの消失パーティクル
+                Instantiate(Ring_Particle[3], ringObject.transform.position, ringObject.transform.rotation);
             }
             //NineScoreが5を超えている場合
             else if (NiceScore >= nine)
@@ -181,6 +187,8 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
                 Nine_Text.gameObject.SetActive(true);
                 //SEPlay
                 Ring_Sound.PlayOneShot(audioClip[1]);
+                //リングの消失パーティクル
+                Instantiate(Ring_Particle[2], ringObject.transform.position, ringObject.transform.rotation);
             }
             //NiceScoreが1以上の場合
             else if (NiceScore > good)
@@ -192,8 +200,15 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
                 CameraShake.Instance.Shake();
                 //SEPlay
                 Ring_Sound.PlayOneShot(audioClip[0]);
+                //リングの消失パーティクル
+                Instantiate(Ring_Particle[1], ringObject.transform.position, ringObject.transform.rotation);
             }
         }
+        //リングの消失パーティクル
+        Instantiate(Ring_Particle[0], ringObject.transform.position, ringObject.transform.rotation);
+        //リングを消去
+        Destroy(ringObject);
+
         //スコアをNiceCoutぶん追加
         Score += NiceScore;
 

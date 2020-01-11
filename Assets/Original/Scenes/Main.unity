@@ -620,6 +620,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 42adc81b61b903b4fa39928b18979d17, type: 3}
   - {fileID: 8300000, guid: ac9c58adf3a490240a2e124151bf8a7a, type: 3}
   BGM: {fileID: 602425582}
+  Ring_Particle:
+  - {fileID: 8822614133484709040, guid: c71425dd8fa5ae2418a1ea8c812564ba, type: 3}
+  - {fileID: 675335909986959297, guid: 333c203e714a830408f45a9498fa9cad, type: 3}
+  - {fileID: 4545953718687589882, guid: 2d8b92275b5611f448a5f1e035486a02, type: 3}
+  - {fileID: 881319180805442088, guid: 864d3dffd50742d468ab4595a2aa0a5f, type: 3}
 --- !u!82 &314394252
 AudioSource:
   m_ObjectHideFlags: 0
