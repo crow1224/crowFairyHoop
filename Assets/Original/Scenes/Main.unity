@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 8448058}
   - component: {fileID: 8448059}
   m_Layer: 5
-  m_Name: Amazing_TMPro
+  m_Name: Excellent_TMPro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1537846203}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -171,7 +171,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: AMAZING!!!!
+  m_text: Excellent!!!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 279be54bf93022e439e07d85b41cc29b, type: 2}
@@ -331,7 +331,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1537846203}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -358,7 +358,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: GOOD!!
+  m_text: GOOD!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 279be54bf93022e439e07d85b41cc29b, type: 2}
@@ -608,9 +608,9 @@ MonoBehaviour:
   Score_Text: {fileID: 1062833409}
   Nine_Text: {fileID: 633952861}
   GameOver_Text: {fileID: 1032073266}
-  Nice_Image: {fileID: 1221958768}
-  Good_Image: {fileID: 191378021}
-  Amazing_Image: {fileID: 8448054}
+  Good_Object: {fileID: 191378021}
+  Nice_Object: {fileID: 1221958768}
+  Excellent_Object: {fileID: 8448054}
   PlayerParticle_Black: {fileID: 249345621}
   PlayerParticle_Orenge: {fileID: 1045511151}
   Pose_Image: {fileID: 1248998750}
@@ -2105,7 +2105,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: NICE!
+  m_text: NICE!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2372,9 +2372,9 @@ RectTransform:
   - {fileID: 1062833408}
   - {fileID: 1032073265}
   - {fileID: 633952858}
-  - {fileID: 8448055}
-  - {fileID: 1221958769}
   - {fileID: 191378022}
+  - {fileID: 1221958769}
+  - {fileID: 8448055}
   - {fileID: 1594663319}
   - {fileID: 1088634156}
   - {fileID: 1248998751}

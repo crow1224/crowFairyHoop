@@ -16,13 +16,13 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
     private TextMeshProUGUI GameOver_Text;//ゲームオーバーを出すためのテキスト
 
     [SerializeField]
-    private GameObject Nice_Image;//Nineの画像
+    private GameObject Good_Object;//Goodの画像
 
     [SerializeField]
-    private GameObject Good_Image;//Goodの画像
+    private GameObject Nice_Object;//Nineの画像
 
     [SerializeField]
-    private GameObject Amazing_Image;//Amazingの画像
+    private GameObject Excellent_Object;//Amazingの画像
 
     [SerializeField]
     private GameObject PlayerParticle_Black;//パーティクル用（黒）
@@ -52,11 +52,11 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
 
     private int P_nice = 3;//パーティクル（薄橙）を出す値
 
-    private int nine = 1;//Nine画像を出す値
+    private int good = 1;//Good画像を出す値
 
-    private int good = 5;//Good画像を出す値
+    private int nine = 4;//Nine画像を出す値
 
-    private int amazing = 10;//Amazing画像を出す値
+    private int amazing = 8;//Amazing画像を出す値
 
     private AudioSource Ring_Sound;//オーディオソースを取得する用
     #endregion
@@ -92,9 +92,9 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
         Ring_Sound = GetComponent<AudioSource>();
 
         //テキスト、画像を非表示に
-        Nice_Image.SetActive(false);
-        Good_Image.SetActive(false);
-        Amazing_Image.SetActive(false);
+        Nice_Object.SetActive(false);
+        Good_Object.SetActive(false);
+        Excellent_Object.SetActive(false);
         Nine_Text.gameObject.SetActive(false);
         GameOver_Text.enabled = false;
         Pose_Image.SetActive(false);
@@ -165,31 +165,31 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
             if (NiceScore >= amazing)
             {
                 //Amazing画像を表示
-                Amazing_Image.SetActive(true);
+                Excellent_Object.SetActive(true);
                 //テキストを表示
                 Nine_Text.gameObject.SetActive(true);
                 CameraShake.Instance.Shake();
                 //SEPlay
                 Ring_Sound.PlayOneShot(audioClip[2]);
             }
-            //NiceScoreが1以上の場合
-            else if (NiceScore > good)
-            {
-                //good画像を表示
-                Good_Image.SetActive(true);
-                //テキストを表示
-                Nine_Text.gameObject.SetActive(true);
-                CameraShake.Instance.Shake();
-                //SEPlay
-                Ring_Sound.PlayOneShot(audioClip[1]);
-            }
             //NineScoreが5を超えている場合
             else if (NiceScore >= nine)
             {
                 //Nine画像を表示
-                Nice_Image.SetActive(true);
+                Nice_Object.SetActive(true);
                 //テキストを表示
                 Nine_Text.gameObject.SetActive(true);
+                //SEPlay
+                Ring_Sound.PlayOneShot(audioClip[1]);
+            }
+            //NiceScoreが1以上の場合
+            else if (NiceScore > good)
+            {
+                //good画像を表示
+                Good_Object.SetActive(true);
+                //テキストを表示
+                Nine_Text.gameObject.SetActive(true);
+                CameraShake.Instance.Shake();
                 //SEPlay
                 Ring_Sound.PlayOneShot(audioClip[0]);
             }
