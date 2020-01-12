@@ -31,6 +31,9 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
     private GameObject PlayerParticle_Orenge;//パーティクル用（薄橙）
 
     [SerializeField]
+    private GameObject PlayerParticle_Portal;//パーティクル用（薄橙）
+
+    [SerializeField]
     private GameObject Pose_Image;//ポーズ用
 
     [SerializeField]
@@ -48,9 +51,11 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
 
     private int NiceScore = 0;//Nineで追加されるScore
 
-    private int P_good = 2;//パーティクル（黒）を出す値
+    private int P_good = 1;//パーティクル（黒）を出す値
 
-    private int P_nice = 3;//パーティクル（薄橙）を出す値
+    private int P_nice = 4;//パーティクル（薄橙）を出す値
+
+    private int P_excellent = 8;//パーティクル（ポータル）を出す値
 
     private int nine = 1;//Nine画像を出す値
 
@@ -103,6 +108,7 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
         //パーティクルを非表示
         PlayerParticle_Black.SetActive(false);
         PlayerParticle_Orenge.SetActive(false);
+        PlayerParticle_Portal.SetActive(false);
 
         //ベストスコアを取得
         BestScore = PlayerPrefs.GetInt("BESTSCORE");
@@ -138,6 +144,7 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
         //パーティクルを非表示
         PlayerParticle_Black.SetActive(false);
         PlayerParticle_Orenge.SetActive(false);
+        PlayerParticle_Portal.SetActive(false);
 
         //FacebookRanking.instance.OnClickSaveLeaderboardButton();
 
@@ -211,6 +218,13 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
             PlayerParticle_Orenge.SetActive(true);
         }
 
+        //NineScoreが3以上の場合
+        if (NiceScore >= P_excellent)
+        {
+            //パーティクル（薄橙）を表示
+            PlayerParticle_Portal.SetActive(true);
+        }
+
         //テクストに反映
         Score_Text.text = Score.ToString();
         //F_Nice_Badを初期化
@@ -241,6 +255,7 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
         //パーティクルを非表示
         PlayerParticle_Black.SetActive(false);
         PlayerParticle_Orenge.SetActive(false);
+        PlayerParticle_Portal.SetActive(false);
     }
 
     public void Pose()//一時停止開始
