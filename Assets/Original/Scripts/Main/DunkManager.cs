@@ -210,6 +210,10 @@ public class DunkManager : SingletonMonoBehaviour<DunkManager>
                 //リングの消失パーティクル
                 Instantiate(Ring_Particle[1], ringObject.transform.position, ringObject.transform.rotation);
             }
+            else
+            {
+                Ring_Sound.PlayOneShot(audioClip[3]);
+            }
         }
         //リングの消失パーティクル
         Instantiate(Ring_Particle[0], ringObject.transform.position, ringObject.transform.rotation);
